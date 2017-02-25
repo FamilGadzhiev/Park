@@ -1,0 +1,47 @@
+PODS:
+  - Alamofire (4.3.0)
+  - AlamofireObjectMapper (4.1.0):
+    - Alamofire (~> 4.1)
+    - ObjectMapper (~> 2.0)
+  - GoogleMaps (2.2.0):
+    - GoogleMaps/Maps (= 2.2.0)
+  - GoogleMaps/Base (2.2.0)
+  - GoogleMaps/Maps (2.2.0):
+    - GoogleMaps/Base
+  - IBAnimatable (3.1.3)
+  - IDZSwiftCommonCrypto (0.9.0)
+  - KeyboardHideManager (1.1.0)
+  - ObjectMapper (2.2.3)
+  - SDWebImage (3.8.2):
+    - SDWebImage/Core (= 3.8.2)
+  - SDWebImage/Core (3.8.2)
+  - SideMenuController (0.2.4)
+  - SwiftyJSON (3.1.4)
+
+DEPENDENCIES:
+  - Alamofire (~> 4.0)
+  - AlamofireObjectMapper (~> 4.0)
+  - GoogleMaps
+  - IBAnimatable (~> 3.1)
+  - IDZSwiftCommonCrypto (~> 0.9)
+  - KeyboardHideManager (~> 1.0)
+  - ObjectMapper (~> 2.2)
+  - SDWebImage (~> 3.8)
+  - SideMenuController
+  - SwiftyJSON
+
+SPEC CHECKSUMS:
+  Alamofire: 856a113053a7bc9cbe5d6367a555d773fc5cfef7
+  AlamofireObjectMapper: 435adc82f5b367679bd9e71c4974a54efd0b2521
+  GoogleMaps: 104c418d61ab8a05dff06ed0784c25ea9d37da45
+  IBAnimatable: ad640d47659cbbfa4cf88a127fdc663b2ec4c66a
+  IDZSwiftCommonCrypto: 60f14492730da20117ce5875b890c7a6fc38ab8c
+  KeyboardHideManager: 9b7eedd5c39c96e3f0b54a8fc5481c63b76fee16
+  ObjectMapper: d3b3de11267f5d971f390eb8d63dd509116a4329
+  SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
+  SideMenuController: b463d2b3aa58e2afe57f57a07938fa9a647894ca
+  SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
+
+PODFILE CHECKSUM: 321787f48d1479efb7e1503bca584c6e61144f95
+
+COCOAPODS: 1.2.0
