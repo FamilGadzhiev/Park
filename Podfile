@@ -13,4 +13,5 @@ target ‘Avionicus’ do
     pod 'ObjectMapper', '~> 2.2'
     pod 'GoogleMaps'
     pod 'SDWebImage', '~>3.8'
+    pod 'BTNavigationDropdownMenu', :git => 'https://github.com/PhamBaTho/BTNavigationDropdownMenu.git', :branch => 'swift-3.0'
 end

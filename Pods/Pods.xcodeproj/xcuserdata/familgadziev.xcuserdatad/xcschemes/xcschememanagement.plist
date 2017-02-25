@@ -14,6 +14,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>BTNavigationDropdownMenu.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>IBAnimatable.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -57,7 +62,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>0A8AD819B149970148A77E93EB5EAEA9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>28AC4E43F531DA2F26F5C16546A652BF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>2F5622F3B18DF497981AB58C6D1FC72F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>308CD022CBE828F23DEDA942B89B0D19</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -67,22 +87,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>3B012B429EA64688ED0BEDB3D654157E</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>3E7263CC447FB3EB5C9620EDA2F2A2FE</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>618B6312D408AF917CA01D86D933C237</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>643A8F18A24CB7F70418AD7C2986F213</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -97,12 +102,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B3C271CE6119E785525D3573D37D903D</key>
+		<key>A17FBF97C9D6F1E0284945970172B0F8</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C7DB3642B74A1603E2BAE8E56AA359DD</key>
+		<key>A52524E727A97710A55D0EDA55BB7CFE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B3C271CE6119E785525D3573D37D903D</key>
 		<dict>
 			<key>primary</key>
 			<true/>

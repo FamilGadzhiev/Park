@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		17654C6F1E61C54B0092A3D7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17654C6E1E61C54B0092A3D7 /* AppDelegate.swift */; };
-		17654C741E61C54B0092A3D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17654C721E61C54B0092A3D7 /* Main.storyboard */; };
 		17654C791E61C54B0092A3D7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17654C771E61C54B0092A3D7 /* LaunchScreen.storyboard */; };
 		17654C841E61C54B0092A3D7 /* AvionicusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17654C831E61C54B0092A3D7 /* AvionicusTests.swift */; };
 		17654C8F1E61C54B0092A3D7 /* AvionicusUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17654C8E1E61C54B0092A3D7 /* AvionicusUITests.swift */; };
@@ -17,6 +16,19 @@
 		17654CA61E61CBA90092A3D7 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17654CA31E61CBA90092A3D7 /* UserData.swift */; };
 		17654CA71E61CBA90092A3D7 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17654CA41E61CBA90092A3D7 /* UserProfile.swift */; };
 		17654CA81E61CBA90092A3D7 /* UserRegistration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17654CA51E61CBA90092A3D7 /* UserRegistration.swift */; };
+		17654CAC1E61D2E20092A3D7 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17654CAA1E61D2E20092A3D7 /* RoundButton.swift */; };
+		17654CAD1E61D2E20092A3D7 /* RoundTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17654CAB1E61D2E20092A3D7 /* RoundTextField.swift */; };
+		17654CB01E61D2F50092A3D7 /* LoginVeiwController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17654CAE1E61D2F50092A3D7 /* LoginVeiwController.swift */; };
+		17654CB11E61D2F50092A3D7 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17654CAF1E61D2F50092A3D7 /* RegistrationViewController.swift */; };
+		17654CB31E61D3110092A3D7 /* KeyboardHideManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17654CB21E61D3110092A3D7 /* KeyboardHideManager.swift */; };
+		17654CB61E61D9510092A3D7 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17654CB51E61D9510092A3D7 /* MainViewController.swift */; };
+		17654CB81E61D95E0092A3D7 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17654CB71E61D95E0092A3D7 /* MapViewController.swift */; };
+		17654CBA1E61D9770092A3D7 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17654CB91E61D9770092A3D7 /* MenuViewController.swift */; };
+		17654CBC1E61D9960092A3D7 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17654CBB1E61D9960092A3D7 /* TabBarController.swift */; };
+		17654CC11E61DCBF0092A3D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17654CBF1E61DCBF0092A3D7 /* Main.storyboard */; };
+		17654CC31E61DF4A0092A3D7 /* TracksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17654CC21E61DF4A0092A3D7 /* TracksViewController.swift */; };
+		17654CC51E61F33D0092A3D7 /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17654CC41E61F33D0092A3D7 /* MenuTableViewCell.swift */; };
+		17654CC71E61F3F70092A3D7 /* UserViewControllerC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17654CC61E61F3F70092A3D7 /* UserViewControllerC.swift */; };
 		51F8CBA03BAF1E65FC9FB5AD /* Pods_Avionicus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA1993DC8BD81311C2F7F58B /* Pods_Avionicus.framework */; };
 /* End PBXBuildFile section */
 
@@ -40,7 +52,6 @@
 /* Begin PBXFileReference section */
 		17654C6B1E61C54B0092A3D7 /* Avionicus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Avionicus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17654C6E1E61C54B0092A3D7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		17654C731E61C54B0092A3D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		17654C781E61C54B0092A3D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		17654C7A1E61C54B0092A3D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		17654C7F1E61C54B0092A3D7 /* AvionicusTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AvionicusTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -54,6 +65,19 @@
 		17654CA31E61CBA90092A3D7 /* UserData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		17654CA41E61CBA90092A3D7 /* UserProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		17654CA51E61CBA90092A3D7 /* UserRegistration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserRegistration.swift; sourceTree = "<group>"; };
+		17654CAA1E61D2E20092A3D7 /* RoundButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
+		17654CAB1E61D2E20092A3D7 /* RoundTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundTextField.swift; sourceTree = "<group>"; };
+		17654CAE1E61D2F50092A3D7 /* LoginVeiwController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVeiwController.swift; sourceTree = "<group>"; };
+		17654CAF1E61D2F50092A3D7 /* RegistrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		17654CB21E61D3110092A3D7 /* KeyboardHideManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardHideManager.swift; sourceTree = "<group>"; };
+		17654CB51E61D9510092A3D7 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		17654CB71E61D95E0092A3D7 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		17654CB91E61D9770092A3D7 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		17654CBB1E61D9960092A3D7 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		17654CC01E61DCBF0092A3D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		17654CC21E61DF4A0092A3D7 /* TracksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TracksViewController.swift; sourceTree = "<group>"; };
+		17654CC41E61F33D0092A3D7 /* MenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
+		17654CC61E61F3F70092A3D7 /* UserViewControllerC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewControllerC.swift; sourceTree = "<group>"; };
 		4BB8B8AD0799F7A2924D8FCC /* Pods-Avionicus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Avionicus.release.xcconfig"; path = "Pods/Target Support Files/Pods-Avionicus/Pods-Avionicus.release.xcconfig"; sourceTree = "<group>"; };
 		715FF74BABC18F386CF8D320 /* Pods-Avionicus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Avionicus.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Avionicus/Pods-Avionicus.debug.xcconfig"; sourceTree = "<group>"; };
 		DA1993DC8BD81311C2F7F58B /* Pods_Avionicus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Avionicus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -115,7 +139,7 @@
 				17654C9E1E61C9910092A3D7 /* Model */,
 				17654C9F1E61C99B0092A3D7 /* View */,
 				17654CA01E61C9A10092A3D7 /* Controller */,
-				17654C721E61C54B0092A3D7 /* Main.storyboard */,
+				17654CBF1E61DCBF0092A3D7 /* Main.storyboard */,
 				17654C9C1E61C9470092A3D7 /* Assets.xcassets */,
 				17654C771E61C54B0092A3D7 /* LaunchScreen.storyboard */,
 				17654C7A1E61C54B0092A3D7 /* Info.plist */,
@@ -154,6 +178,8 @@
 		17654C9F1E61C99B0092A3D7 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				17654CC41E61F33D0092A3D7 /* MenuTableViewCell.swift */,
+				17654CB41E61D31C0092A3D7 /* StoryboardManager */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -161,8 +187,26 @@
 		17654CA01E61C9A10092A3D7 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				17654CC61E61F3F70092A3D7 /* UserViewControllerC.swift */,
+				17654CBB1E61D9960092A3D7 /* TabBarController.swift */,
+				17654CB91E61D9770092A3D7 /* MenuViewController.swift */,
+				17654CAE1E61D2F50092A3D7 /* LoginVeiwController.swift */,
+				17654CAF1E61D2F50092A3D7 /* RegistrationViewController.swift */,
+				17654CB51E61D9510092A3D7 /* MainViewController.swift */,
+				17654CB71E61D95E0092A3D7 /* MapViewController.swift */,
+				17654CC21E61DF4A0092A3D7 /* TracksViewController.swift */,
 			);
 			name = Controller;
+			sourceTree = "<group>";
+		};
+		17654CB41E61D31C0092A3D7 /* StoryboardManager */ = {
+			isa = PBXGroup;
+			children = (
+				17654CAA1E61D2E20092A3D7 /* RoundButton.swift */,
+				17654CAB1E61D2E20092A3D7 /* RoundTextField.swift */,
+				17654CB21E61D3110092A3D7 /* KeyboardHideManager.swift */,
+			);
+			name = StoryboardManager;
 			sourceTree = "<group>";
 		};
 		803CE5C72D83E21944D87AEE /* Pods */ = {
@@ -297,7 +341,7 @@
 			files = (
 				17654C791E61C54B0092A3D7 /* LaunchScreen.storyboard in Resources */,
 				17654C9D1E61C9470092A3D7 /* Assets.xcassets in Resources */,
-				17654C741E61C54B0092A3D7 /* Main.storyboard in Resources */,
+				17654CC11E61DCBF0092A3D7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -370,10 +414,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17654CAC1E61D2E20092A3D7 /* RoundButton.swift in Sources */,
+				17654CB81E61D95E0092A3D7 /* MapViewController.swift in Sources */,
 				17654CA71E61CBA90092A3D7 /* UserProfile.swift in Sources */,
+				17654CBC1E61D9960092A3D7 /* TabBarController.swift in Sources */,
+				17654CC31E61DF4A0092A3D7 /* TracksViewController.swift in Sources */,
+				17654CB01E61D2F50092A3D7 /* LoginVeiwController.swift in Sources */,
+				17654CBA1E61D9770092A3D7 /* MenuViewController.swift in Sources */,
 				17654CA81E61CBA90092A3D7 /* UserRegistration.swift in Sources */,
+				17654CB61E61D9510092A3D7 /* MainViewController.swift in Sources */,
+				17654CB31E61D3110092A3D7 /* KeyboardHideManager.swift in Sources */,
+				17654CC51E61F33D0092A3D7 /* MenuTableViewCell.swift in Sources */,
+				17654CB11E61D2F50092A3D7 /* RegistrationViewController.swift in Sources */,
+				17654CAD1E61D2E20092A3D7 /* RoundTextField.swift in Sources */,
 				17654CA61E61CBA90092A3D7 /* UserData.swift in Sources */,
 				17654CA21E61C9C70092A3D7 /* Constans.swift in Sources */,
+				17654CC71E61F3F70092A3D7 /* UserViewControllerC.swift in Sources */,
 				17654C6F1E61C54B0092A3D7 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -410,20 +466,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		17654C721E61C54B0092A3D7 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				17654C731E61C54B0092A3D7 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		17654C771E61C54B0092A3D7 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				17654C781E61C54B0092A3D7 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		17654CBF1E61DCBF0092A3D7 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				17654CC01E61DCBF0092A3D7 /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

@@ -3,6 +3,7 @@ PODS:
   - AlamofireObjectMapper (4.1.0):
     - Alamofire (~> 4.1)
     - ObjectMapper (~> 2.0)
+  - BTNavigationDropdownMenu (0.4.1)
   - GoogleMaps (2.2.0):
     - GoogleMaps/Maps (= 2.2.0)
   - GoogleMaps/Base (2.2.0)
@@ -21,6 +22,7 @@ PODS:
 DEPENDENCIES:
   - Alamofire (~> 4.0)
   - AlamofireObjectMapper (~> 4.0)
+  - BTNavigationDropdownMenu (from `https://github.com/PhamBaTho/BTNavigationDropdownMenu.git`, branch `swift-3.0`)
   - GoogleMaps
   - IBAnimatable (~> 3.1)
   - IDZSwiftCommonCrypto (~> 0.9)
@@ -30,9 +32,20 @@ DEPENDENCIES:
   - SideMenuController
   - SwiftyJSON
 
+EXTERNAL SOURCES:
+  BTNavigationDropdownMenu:
+    :branch: swift-3.0
+    :git: https://github.com/PhamBaTho/BTNavigationDropdownMenu.git
+
+CHECKOUT OPTIONS:
+  BTNavigationDropdownMenu:
+    :commit: 2c08c8579cf7a53ecb3dbf578e6e1034080a9859
+    :git: https://github.com/PhamBaTho/BTNavigationDropdownMenu.git
+
 SPEC CHECKSUMS:
   Alamofire: 856a113053a7bc9cbe5d6367a555d773fc5cfef7
   AlamofireObjectMapper: 435adc82f5b367679bd9e71c4974a54efd0b2521
+  BTNavigationDropdownMenu: 093f3cbfad1572f2c222bdf8d17584d1e13380d4
   GoogleMaps: 104c418d61ab8a05dff06ed0784c25ea9d37da45
   IBAnimatable: ad640d47659cbbfa4cf88a127fdc663b2ec4c66a
   IDZSwiftCommonCrypto: 60f14492730da20117ce5875b890c7a6fc38ab8c
@@ -42,6 +55,6 @@ SPEC CHECKSUMS:
   SideMenuController: b463d2b3aa58e2afe57f57a07938fa9a647894ca
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: 321787f48d1479efb7e1503bca584c6e61144f95
+PODFILE CHECKSUM: f47ee227d8c230e468b610c17281f7081b8e42f0
 
 COCOAPODS: 1.2.0
