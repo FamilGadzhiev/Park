@@ -9,6 +9,8 @@
 import UIKit
 import GoogleMaps
 
+let apiManager = APIManager()
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -29,7 +31,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         UINavigationBar.appearance().isTranslucent = true
         
+        
         GMSServices.provideAPIKey(googleMapsApiKey)
+        
         return true
     }
 

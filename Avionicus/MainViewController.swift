@@ -8,6 +8,7 @@
 
 import UIKit
 import BTNavigationDropdownMenu
+import SideMenu
 
 class  MainViewController: UIViewController{
 
@@ -19,17 +20,14 @@ class  MainViewController: UIViewController{
     
     
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-
         dropMenuButtonView()
         
-        
-        
+       
     }
+    
     
 
     @IBAction func StartButton(_ sender: Any) {

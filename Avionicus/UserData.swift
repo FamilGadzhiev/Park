@@ -6,12 +6,12 @@
 //  Copyright © 2016 Фамил Гаджиев. All rights reserved.
 //
 
-import UIKit
+import Foundation
 import Alamofire
 import ObjectMapper
 import AlamofireObjectMapper
 
-class UserData: Mappable{
+class UserData: Mappable {
     /// This function can be used to validate JSON prior to mapping. Return nil to cancel mapping at this point
     public required init?(map: Map) {
         
@@ -32,6 +32,14 @@ class UserData: Mappable{
     var bStateError: Bool?
     var sMsgTitle: String?
     var sMsg: String?
+    
+    init(json: JSON) {
+        if let hash = json["hash"] as? String? {
+            self.hash = hash
+        } else {
+            
+        }
+    }
     
     func mapping(map: Map) {
         

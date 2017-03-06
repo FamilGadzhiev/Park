@@ -11,20 +11,15 @@ import Alamofire
 import SwiftyJSON
 
 
-class TracksVewController: UITableViewController {
+class TracksViewController: UITableViewController {
     
     @IBOutlet weak var MenuButton: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
-        
-        
+    
    
     }
-
-        
-    
 }
     
 

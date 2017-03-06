@@ -6,7 +6,7 @@
 //  Copyright © 2017 Фамил Гаджиев. All rights reserved.
 //
 
-import UIKit
+import Foundation
 import Alamofire
 import ObjectMapper
 import AlamofireObjectMapper

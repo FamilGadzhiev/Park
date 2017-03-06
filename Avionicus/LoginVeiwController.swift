@@ -14,17 +14,19 @@ import IDZSwiftCommonCrypto
 class LoginViewController: UIViewController, UITextFieldDelegate{
     
     @IBOutlet weak var loginEnter: RoundTextField!
-    
     @IBOutlet weak var passwordEnter: RoundTextField!
-
     @IBOutlet weak var signIn: RoundeButton!
     
+    var api = APIManager()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         loginEnter.delegate = self
-                        
+        
+        let request = Avionicus.registration("famil", "12332", "famil@yandex.ru").request
+        print (request)
+        
         
     }
     
@@ -49,82 +51,87 @@ class LoginViewController: UIViewController, UITextFieldDelegate{
             
             let loginInput = self.loginEnter.text!
             let password = self.passwordEnter.text!
-    
+            
             let md5s2: Digest = Digest(algorithm: .md5)
             md5s2.update(string: password)
             let digest = md5s2.final()
             
-
-            let parametr = [ "login": loginInput, "password": hexString(fromArray: digest), "response_type":"json", "avkey": AVKEY]
-            
-            Alamofire.request(LOGINURL, method: .get, parameters: parametr)
-                .validate(contentType: ["application/json"])
-                .responseObject{ (response: DataResponse<UserData>)  in // здесь надо ловить твою ошибку
-                    
-                    switch response.result {
-                    case .success:
-                        
-                        // проверка что норм json
-                        // json, который пришел в dictionary сохранить в NSUserDefaults
-                        // let user  = UserData(...) либо ошибку
-                        
-                        let user = response.result.value
-                        
-                        print("Hash: \(user?.hash)")
-                        print("id: \(user?.userId)")
-                        print("login \(user?.login)")
-//                        let imageString = user?.profile_avatar
-//                        let image = NSURL(string: imageString!)
-//                        
-                        
-                        let boolSucces = user?.bStateError!
-                        
-                        if  boolSucces == false {
-                            
-                            let succesAlert = UIAlertController(title: "Successful", message: "Authorization successful, welcome to Avionicus", preferredStyle: UIAlertControllerStyle.alert)
-                            let successAction = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
-                            succesAlert.addAction(successAction)
-                            self.present(succesAlert, animated: true, completion: nil)
-                            
-                            
-                            //self.performSegue(withIdentifier: "RevealVC", sender: nil)
-                            
-                            
-                        }
-                        else{
-                            
-                            let errorAlert = UIAlertController(title: "Error", message: " \(user!.sMsg) =( ", preferredStyle: UIAlertControllerStyle.alert)
-                            let actionError = UIAlertAction(title: "Try Again", style: .cancel, handler: nil)
-                            errorAlert.addAction(actionError)
-                            self.present(errorAlert, animated: true, completion: nil)
-                            
-                            
-                        }
-
-                    case .failure(let error):
-                        print(error)
-                        
-                        
-                    }
+            apiManager.auth(login: loginInput, pass: hexString(fromArray: digest)) { result in
+                
+                switch result {
+                case .success(let userData):
+                    print("Hash is \(userData.hash)")
+                self.performSegue(withIdentifier: AvionicusSegues.goToTab, sender: self)
+                case .failure(let error):
+                    print("ERROR! \(error.localizedDescription)")
+                }
             }
+        
+//            let md5s2: Digest = Digest(algorithm: .md5)
+//            md5s2.update(string: password)
+//            let digest = md5s2.final()
+//            
+//
+//            let parametr = [ "login": loginInput, "password": hexString(fromArray: digest), "response_type":"json", "avkey": AVKEY]
             
-            
-        }else{
-            
-            let alert = UIAlertController(title: "Username and Password required", message: "You must enter both a username and password", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-            present(alert, animated: true, completion: nil)
+//            Alamofire.request(LOGINURL, method: .get, parameters: parametr)
+//                .validate(contentType: ["application/json"])
+//                .responseObject{ (response: DataResponse<UserData>)  in // здесь надо ловить твою ошибку
+//                    
+//                    switch response.result {
+//                    case .success:
+//                        
+//                        // проверка что норм json
+//                        // json, который пришел в dictionary сохранить в NSUserDefaults
+//                        // let user  = UserData(...) либо ошибку
+//                        
+//                        let user = response.result.value
+//                        
+//                        print("Hash: \(user?.hash)")
+//                        print("id: \(user?.userId)")
+//                        print("login \(user?.login)")
+////                        let imageString = user?.profile_avatar
+////                        let image = NSURL(string: imageString!)
+////                        
+//                        
+//                        let boolSucces = user?.bStateError!
+//                        
+//                        if  boolSucces == false {
+//                            
+//                            let succesAlert = UIAlertController(title: "Successful", message: "Authorization successful, welcome to Avionicus", preferredStyle: UIAlertControllerStyle.alert)
+//                            let successAction = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
+//                            succesAlert.addAction(successAction)
+//                            self.present(succesAlert, animated: true, completion: nil)
+//                            
+//                            
+//                            //self.performSegue(withIdentifier: "RevealVC", sender: nil)
+//                            
+//                            
+//                        }
+//                        else{
+//                            
+//                            let errorAlert = UIAlertController(title: "Error", message: " \(user!.sMsg) =( ", preferredStyle: UIAlertControllerStyle.alert)
+//                            let actionError = UIAlertAction(title: "Try Again", style: .cancel, handler: nil)
+//                            errorAlert.addAction(actionError)
+//                            self.present(errorAlert, animated: true, completion: nil)
+//                            
+//                            
+//                        }
+//
+//                    case .failure(let error):
+//                        print(error)
+//                        
+//                        
+//                    }
+//            }
+//            
+//            
+//        }else{
+//            
+//            let alert = UIAlertController(title: "Username and Password required", message: "You must enter both a username and password", preferredStyle: .alert)
+//            alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+//            present(alert, animated: true, completion: nil)
+//        }
         }
     }
-    
-
-    
-
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-      
-        
-    }
-
 }
