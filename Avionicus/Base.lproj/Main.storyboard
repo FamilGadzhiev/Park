@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="9tK-lD-Nu2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vQb-Ls-Kr3">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -527,6 +527,39 @@
                                             <outlet property="labelMenu" destination="MoA-Vw-YOU" id="G5m-5w-CRx"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Fbz-Jy-y0h" customClass="MenuTableViewCell" customModule="Avionicus" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="72" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Fbz-Jy-y0h" id="QVk-Da-m0D">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fFW-HO-VRQ">
+                                                    <rect key="frame" x="39" y="6" width="30" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="fk1-dP-dP7"/>
+                                                        <constraint firstAttribute="width" constant="30" id="wtB-vh-DZ0"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dZe-4d-PG1">
+                                                    <rect key="frame" x="109" y="11" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="fFW-HO-VRQ" firstAttribute="centerY" secondItem="QVk-Da-m0D" secondAttribute="centerY" id="49Q-LG-kTD"/>
+                                                <constraint firstItem="dZe-4d-PG1" firstAttribute="leading" secondItem="fFW-HO-VRQ" secondAttribute="trailing" constant="40" id="Jxq-hb-kDY"/>
+                                                <constraint firstItem="fFW-HO-VRQ" firstAttribute="centerY" secondItem="dZe-4d-PG1" secondAttribute="centerY" id="Omc-Bd-3CL"/>
+                                                <constraint firstItem="fFW-HO-VRQ" firstAttribute="leading" secondItem="QVk-Da-m0D" secondAttribute="leadingMargin" constant="31" id="frg-cT-Icr"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="iconMenu" destination="fFW-HO-VRQ" id="VVA-mk-SBr"/>
+                                            <outlet property="labelMenu" destination="dZe-4d-PG1" id="BEa-ON-LBG"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </prototypes>
                             </tableView>
                         </subviews>
@@ -992,13 +1025,16 @@
         <!--Side Menu Navigation Controller-->
         <scene sceneID="l1m-8e-ZOE">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mNs-Pc-Dbb" customClass="UISideMenuNavigationController" customModule="SideMenu" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="LeftMenuNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="mNs-Pc-Dbb" customClass="UISideMenuNavigationController" customModule="SideMenu" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Igk-Cs-zyl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="leftSide" value="YES"/>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <segue destination="RNh-kZ-cLi" kind="relationship" relationship="rootViewController" id="THA-8g-hD5"/>
                     </connections>

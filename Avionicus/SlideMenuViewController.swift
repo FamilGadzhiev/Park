@@ -10,7 +10,7 @@ import UIKit
 import SDWebImage
 import SideMenu
 
-class  SlideMenuViewController:UIViewController, UITableViewDelegate, UITableViewDataSource{
+class  SlideMenuViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
     
     @IBOutlet weak var avatar: UIImageView!
@@ -41,12 +41,12 @@ class  SlideMenuViewController:UIViewController, UITableViewDelegate, UITableVie
         menuNameArray = ["Profile","Tracks","Map","Message","Setting"]
         menuImageArray = [#imageLiteral(resourceName: "Profile"), #imageLiteral(resourceName: "Track"), #imageLiteral(resourceName: "Map"), #imageLiteral(resourceName: "Message"), #imageLiteral(resourceName: "Settings")]
         
-        avatar.layer.borderColor = UIColor.white.cgColor
-        avatar.layer.borderWidth = 0.5
-        avatar.layer.cornerRadius = 75
-        avatar.layer.masksToBounds = true
-        avatar.clipsToBounds = true
-        
+//        avatar.layer.borderColor = UIColor.white.cgColor
+//        avatar.layer.borderWidth = 0.5
+//        avatar.layer.cornerRadius = 75
+//        avatar.layer.masksToBounds = true
+//        avatar.clipsToBounds = true
+//        
         
         
         

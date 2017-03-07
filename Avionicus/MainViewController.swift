@@ -23,9 +23,11 @@ class  MainViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        dropMenuButtonView()
         
-       
+        dropMenuButtonView()
+        setupSideMenu()
+        
+        
     }
     
     
@@ -35,12 +37,24 @@ class  MainViewController: UIViewController{
         print("Start Button")
         
     }
-    
+
+    func setupSideMenu(){
+        
+        let menuLeftNavigationController = storyboard?.instantiateViewController(withIdentifier: "LeftMenuNavigationController") as? UISideMenuNavigationController
+            
+        menuLeftNavigationController?.leftSide = true
+        SideMenuManager.menuLeftNavigationController = menuLeftNavigationController
+        
+        SideMenuManager.menuAddPanGestureToPresent(toView: self.navigationController!.navigationBar)
+        SideMenuManager.menuAddScreenEdgePanGesturesToPresent(toView: self.navigationController!.view)
+
+        
+    }
 
     
     func dropMenuButtonView(){
         
-        let itemDropMenuButton = ["Walking","Running","Bicycle","Hikking","Climbing","Hourse riding","Car","Motorcycle"]
+        let itemDropMenuButton = ["Walking","Running","Bicycle","Snowboard","Skate","Motorcycle"]
         
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
 
