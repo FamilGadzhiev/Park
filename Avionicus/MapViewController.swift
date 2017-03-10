@@ -8,6 +8,7 @@
 
 import UIKit
 import GoogleMaps
+import SideMenu
 
 class MapViewController: UIViewController{
     
@@ -16,11 +17,13 @@ class MapViewController: UIViewController{
     
     let locationManager = CLLocationManager()
     
+    @IBAction func MenuBarItem(_ sender: Any) {
+        present(SideMenuManager.menuLeftNavigationController!, animated: true, completion: nil)
+    }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()

@@ -9,7 +9,9 @@
 import Foundation
 import ObjectMapper
 import AlamofireObjectMapper
+import KeychainSwift
 
+let keyChain = KeychainSwift()
 typealias JSON = [String: Any]
 
 enum APIResult<T> {
@@ -20,10 +22,13 @@ enum APIResult<T> {
 enum Avionicus {
     case auth(String, String)
     case registration(String, String, String)
-    
+    case getProfile
     
     var baseURL: String { return "http://avionicus.ru" }
     var avkey: String { return "1M1TE9oeWTDK6gFME9JYWXqpAGc" }
+    var hash: String? { return keyChain.get("hash") }
+    
+    
     
     private struct ParameterKeys {
         static let login = "login"
@@ -38,6 +43,7 @@ enum Avionicus {
         switch self {
         case .auth: return "/api/common/login"
         case .registration: return "/api/common/registration/"
+        case .getProfile: return "api/avtrack/user/"
         }
     }
     
@@ -58,6 +64,13 @@ enum Avionicus {
                 ParameterKeys.pass: pass,
                 ParameterKeys.mail: mail,
                 ParameterKeys.responseType: "json",
+            ]
+        
+        case .getProfile:
+            return[
+                ParameterKeys.avkey: avkey,
+                ParameterKeys.hash: hash!,
+                ParameterKeys.responseType: "json"
             ]
         }
     }
@@ -130,7 +143,7 @@ class APIManager {
                     if let result = parse(json) {
                         completion(.success(result))
                     } else {
-                        let error = NSError(domain: "", code: 30, userInfo: [:])
+                        let error = NSError(domain: "Error parsing", code: 30, userInfo: [:])
                         completion(.failure(error))
                     }
                 }
@@ -148,13 +161,17 @@ class APIManager {
         let request = Avionicus.auth(login, pass).request
         
         fetch(request: request, parse: { (json) -> UserData? in
-            return UserData(json: json["response"] as! JSON)
+            return UserData(json: json)
         }, completion: completion)
     }
-    func auth1(login: String, pas: String, completion: @escaping (APIManager) -> Void){
-        
-        
-        
+    
+    
+    func getProfile(completion: @escaping(APIResult<UserProfile>)-> Void){
+        let request = Avionicus.getProfile.request
+        fetch(request: request, parse: {(json) -> UserProfile? in
+            return UserProfile(json: json)
+        }, completion: completion)
+
     }
     
 }

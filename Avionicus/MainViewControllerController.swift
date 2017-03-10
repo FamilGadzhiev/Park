@@ -13,9 +13,7 @@ import SideMenu
 class  MainViewController: UIViewController{
 
     @IBOutlet weak var MenuBarItem: UIBarButtonItem!
-    
     @IBOutlet weak var StartButton: RoundeButton!
-    
     var menuView: BTNavigationDropdownMenu!
     
     
@@ -27,30 +25,45 @@ class  MainViewController: UIViewController{
         dropMenuButtonView()
         setupSideMenu()
         
-        
     }
     
-    
+    @IBAction func MenuBarButton(_ sender: Any) {
+        present(SideMenuManager.menuLeftNavigationController!, animated: true, completion: nil)
+    }
 
     @IBAction func StartButton(_ sender: Any) {
-        
         print("Start Button")
-        
     }
 
     func setupSideMenu(){
         
-        let menuLeftNavigationController = storyboard?.instantiateViewController(withIdentifier: "LeftMenuNavigationController") as? UISideMenuNavigationController
+        let menuLeftNavigationController = storyboard?.instantiateViewController(withIdentifier: "LeftMenu") as? UISideMenuNavigationController
             
         menuLeftNavigationController?.leftSide = true
         SideMenuManager.menuLeftNavigationController = menuLeftNavigationController
         
         SideMenuManager.menuAddPanGestureToPresent(toView: self.navigationController!.navigationBar)
         SideMenuManager.menuAddScreenEdgePanGesturesToPresent(toView: self.navigationController!.view)
-
+        setupDifaultSideMenu()
         
     }
 
+    func setupDifaultSideMenu (){
+        
+        SideMenuManager.menuAnimationBackgroundColor = UIColor(patternImage: #imageLiteral(resourceName: "Little bit Black") )
+        SideMenuManager.menuWidth = 345.0
+        SideMenuManager.menuPresentMode = .menuSlideIn
+        SideMenuManager.menuPushStyle = .defaultBehavior
+        SideMenuManager.menuAllowPushOfSameClassTwice = true
+        SideMenuManager.menuAnimationPresentDuration = 0.1
+        SideMenuManager.menuAnimationDismissDuration = 0.1
+        SideMenuManager.menuAnimationFadeStrength = 0
+        SideMenuManager.menuAnimationTransformScaleFactor = 1
+        SideMenuManager.menuParallaxStrength = 1
+        SideMenuManager.menuAnimationOptions = .curveEaseIn
+        
+        
+    }
     
     func dropMenuButtonView(){
         

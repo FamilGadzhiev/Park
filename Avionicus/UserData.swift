@@ -10,13 +10,12 @@ import Foundation
 import Alamofire
 import ObjectMapper
 import AlamofireObjectMapper
+import KeychainSwift
 
 class UserData: Mappable {
     /// This function can be used to validate JSON prior to mapping. Return nil to cancel mapping at this point
-    public required init?(map: Map) {
-        
-    }
-
+    public required init?(map: Map) {}
+    
     var hash: String?
     var userId: String?
     var login: String?
@@ -33,16 +32,31 @@ class UserData: Mappable {
     var sMsgTitle: String?
     var sMsg: String?
     
-    init(json: JSON) {
-        if let hash = json["hash"] as? String? {
-            self.hash = hash
-        } else {
+    let keyChain = KeychainSwift()
+    
+    convenience init?(json: JSON) {
+        self.init(JSON: json)
+        if let error = self.bStateError {
+            guard !error else {
+                return nil
+            }
+        }
+        if let hash = self.hash {
+            writeHashToKeyChain(string: hash)
             
         }
+        
+//        if let hash = json["hash"] as? String? {
+//            self.hash = hash
+//        } else {
+//            return nil
+//        }
+        
+ 
     }
     
     func mapping(map: Map) {
-        
+    
         hash                <- map   ["response.hash"]
         userId              <- map   ["response.id"]
         login               <- map   ["response.login"]
@@ -57,13 +71,18 @@ class UserData: Mappable {
         bStateError         <- map   ["bStateError"]
         sMsgTitle           <- map   ["sMsgTitle"]
         sMsg                <- map   ["sMsg"]
-
     
     }
     
     // [User withDefaults]
     // [User saveToDefaults:dictionary]
 
+    func writeHashToKeyChain(string: String) {
+        keyChain.set( string, forKey: "hash")
+    }
     
-    
+    func getHashFromKeychain() -> String? {
+        return keyChain.get("hash")
+    }
+
 }

@@ -24,13 +24,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate{
         
         loginEnter.delegate = self
         
-        let request = Avionicus.registration("famil", "12332", "famil@yandex.ru").request
-        print (request)
-        
-        
+        //let request = Avionicus.registration("famil", "12332", "famil@yandex.ru").request
+        //print (request)
     }
     
-
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
         let text = (loginEnter.text! as NSString).replacingCharacters(in: range, with: string)
@@ -67,6 +64,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate{
                 }
             }
         
+            
 //            let md5s2: Digest = Digest(algorithm: .md5)
 //            md5s2.update(string: password)
 //            let digest = md5s2.final()

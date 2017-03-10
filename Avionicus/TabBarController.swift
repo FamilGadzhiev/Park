@@ -27,6 +27,10 @@ class TabBarController: UITabBarController {
 //        }
         
         
+        
+//        let profileRequest = Avionicus.getProfile.request
+//        print(profileRequest)
+
         self.tabBar.tintColor = UIColor(colorLiteralRed: 240.0 , green: 251.0 , blue: 255.0 , alpha: 100.0)
         self.tabBar.unselectedItemTintColor =  UIColor.lightGray
         self.tabBar.backgroundImage = UIImage(named:"Rectangle 38.png")

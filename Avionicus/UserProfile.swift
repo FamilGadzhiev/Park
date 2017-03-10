@@ -17,6 +17,10 @@ class UserProfile{
         
     }
     
+    init?(json: JSON) {
+        
+    }
+    
     var profile_mail: String?
     var profile_name: String?
     var profile_weight: String?
