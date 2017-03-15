@@ -52,6 +52,5 @@ class UserProfile{
         profile_sport_club          <- map  ["profile_sport_club"]
         last_date_profile           <- map  ["last_date_profile"]
         
-    
     }
 }

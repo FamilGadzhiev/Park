@@ -22,13 +22,11 @@ enum APIResult<T> {
 enum Avionicus {
     case auth(String, String)
     case registration(String, String, String)
-    case getProfile
+    case getProfile()
     
     var baseURL: String { return "http://avionicus.ru" }
     var avkey: String { return "1M1TE9oeWTDK6gFME9JYWXqpAGc" }
     var hash: String? { return keyChain.get("hash") }
-    
-    
     
     private struct ParameterKeys {
         static let login = "login"
@@ -46,7 +44,6 @@ enum Avionicus {
         case .getProfile: return "api/avtrack/user/"
         }
     }
-    
     
     
     var parameters: JSON {
@@ -166,13 +163,21 @@ class APIManager {
     }
     
     
-    func getProfile(completion: @escaping(APIResult<UserProfile>)-> Void){
-        let request = Avionicus.getProfile.request
-        fetch(request: request, parse: {(json) -> UserProfile? in
-            return UserProfile(json: json)
+    func registration(login: String, pass: String, mail: String, completion: @escaping(APIResult<UserData>)-> Void) {
+        let requset = Avionicus.registration(login, mail,pass ).request
+        
+        fetch(request: requset, parse: { (json) -> UserData? in
+            return UserData(json: json)
         }, completion: completion)
-
     }
+    
+    
+//    func getProfile(completion: @escaping(APIResult<UserProfile>)-> Void){
+//        let request = Avionicus.getProfile.request
+//        fetch(request: request, parse: {(json) -> UserProfile? in
+//            return UserProfile(json: json)
+//        }, completion: completion)
+//    }
     
 }
 

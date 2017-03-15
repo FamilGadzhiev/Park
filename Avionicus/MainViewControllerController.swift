@@ -13,7 +13,7 @@ import SideMenu
 class  MainViewController: UIViewController{
 
     @IBOutlet weak var MenuBarItem: UIBarButtonItem!
-    @IBOutlet weak var StartButton: RoundeButton!
+    @IBOutlet weak var StartButton: RoundButton!
     var menuView: BTNavigationDropdownMenu!
     
     

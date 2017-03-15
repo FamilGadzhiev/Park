@@ -9,36 +9,41 @@
 import UIKit
 import Alamofire
 
-class RegistrationViewController: UIViewController {
+class RegistrationViewController: UIViewController, UITextFieldDelegate {
 
-    @IBOutlet weak var registrationBtn: RoundeButton!
-    @IBOutlet weak var nameText: RoundTextField!
-    @IBOutlet weak var senameText: RoundTextField!
-    @IBOutlet weak var loginText: RoundTextField!
-    @IBOutlet weak var mailText: RoundTextField!
-    @IBOutlet weak var passwordText: RoundTextField!
+    @IBOutlet weak var registrationBtn: RoundButton?
+    @IBOutlet weak var nameText: RoundTextField?
+    @IBOutlet weak var senameText: RoundTextField?
+    @IBOutlet weak var loginText: RoundTextField?
+    @IBOutlet weak var mailText: RoundTextField?
+    @IBOutlet weak var passwordText: RoundTextField?
+    
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        
+        
+    }
     
 
     @IBAction func Registration(_ sender: Any) {
-    
         
-    }
-
-    @IBAction func backBtn(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
+        let loginText = self.loginText?.text
+        let passwordText = self.passwordText?.text
+        let mailText = self.mailText?.text
         
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
+        apiManager.registration(login: loginText!, pass: passwordText!, mail: mailText!){ result in
         
-        // Do any additional setup after loading the view.
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+            
+            
+        }
+        
+        
     }
     
   
+    @IBAction func backBtn(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
 }

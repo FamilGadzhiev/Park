@@ -41,7 +41,6 @@ class SideMenuTableViewController: UITableViewController {
         
     }
 
-    // MARK: - Table view data source
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -56,25 +55,6 @@ class SideMenuTableViewController: UITableViewController {
         imageView.contentMode = .scaleAspectFill
         //imageView.backgroundColor = UIColor.black.withAlphaComponent(5)
         tableView.backgroundView = imageView
-    }
-
-    
-    
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return menuNameArray.count
-    }
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: "SideMenuTableViewCell") as! SideMenuTableViewCell
-        
-        return cell
-
     }
 
 }

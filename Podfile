@@ -6,7 +6,6 @@ target ‘Avionicus’ do
     pod 'KeychainSwift', '~> 7.0'
     pod 'Alamofire', '~> 4.0'
     pod 'SwiftyJSON'
-    pod 'KeyboardHideManager', '~> 1.0'
     pod 'IDZSwiftCommonCrypto', '~> 0.9'
     pod 'IBAnimatable', '~> 3.1'
     pod 'SideMenu'

@@ -29,11 +29,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>KeyboardHideManager.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>KeychainSwift.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -67,6 +62,11 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>1117A6B9885CB4DF9A57EEDF3A18679B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>2F5622F3B18DF497981AB58C6D1FC72F</key>
 		<dict>
 			<key>primary</key>
@@ -82,27 +82,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>39B1A996BEC328EB250FE8DA12609B80</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>3E7263CC447FB3EB5C9620EDA2F2A2FE</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>6E015A46827598C48251159688ECFF62</key>
+		<key>3DADF368055845563DA921BFB5B8E814</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>88E9EC28B8B46C3631E6B242B50F4442</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>8A15E6C08AD26BFDD108851F24DA3DAD</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -117,12 +102,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B04BCCD9E75CCECA247B46044860BA6A</key>
+		<key>AEB42EEC3B35252B416E63BE7FD31F7E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>B3C271CE6119E785525D3573D37D903D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E2C8602831423DBE01966A0F380F9DC5</key>
 		<dict>
 			<key>primary</key>
 			<true/>
