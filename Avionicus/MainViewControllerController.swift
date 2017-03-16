@@ -22,9 +22,15 @@ class  MainViewController: UIViewController{
         super.viewDidLoad()
         
         
+   
+        let profileRequest = Avionicus.getProfile.request
+        print(profileRequest.url!)
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         dropMenuButtonView()
         setupSideMenu()
-        
     }
     
     @IBAction func MenuBarButton(_ sender: Any) {
@@ -51,7 +57,7 @@ class  MainViewController: UIViewController{
     func setupDifaultSideMenu (){
         
         SideMenuManager.menuAnimationBackgroundColor = UIColor(patternImage: #imageLiteral(resourceName: "Little bit Black") )
-        SideMenuManager.menuWidth = 345.0
+        SideMenuManager.menuWidth = 350.0
         SideMenuManager.menuPresentMode = .menuSlideIn
         SideMenuManager.menuPushStyle = .defaultBehavior
         SideMenuManager.menuAllowPushOfSameClassTwice = true

@@ -25,18 +25,13 @@ class SideMenuTableViewController: UITableViewController {
         super.viewDidLoad()
         
 
+        age.text = (UserDefaults.standard.value(forKey: "id") as! String)
         
-
         avatarIm.layer.borderColor = UIColor.white.cgColor
         avatarIm.layer.borderWidth = 0.5
-        avatarIm.layer.cornerRadius = 75
+        avatarIm.layer.cornerRadius = 65.0
         avatarIm.layer.masksToBounds = true
         avatarIm.clipsToBounds = true
-        
-        menuNameArray = ["Profile","Tracks","Main","Friends"]
-        menuImageArray = [#imageLiteral(resourceName: "Profile"),#imageLiteral(resourceName: "Group"),#imageLiteral(resourceName: "Message"),#imageLiteral(resourceName: "Settings")]
-        
-        
         
         
     }
@@ -53,6 +48,8 @@ class SideMenuTableViewController: UITableViewController {
         // Set up a cool background image for demo purposes
         let imageView = UIImageView(image:#imageLiteral(resourceName: "Little bit Black"))
         imageView.contentMode = .scaleAspectFill
+        
+        
         //imageView.backgroundColor = UIColor.black.withAlphaComponent(5)
         tableView.backgroundView = imageView
     }

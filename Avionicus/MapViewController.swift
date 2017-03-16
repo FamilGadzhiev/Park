@@ -12,10 +12,12 @@ import SideMenu
 
 class MapViewController: UIViewController{
     
-    @IBOutlet weak var mapView: GMSMapView!
+    
+    @IBOutlet weak var Map: GMSMapView!
     @IBOutlet weak var MenuButton: UIBarButtonItem!
     
     let locationManager = CLLocationManager()
+    
     
     @IBAction func MenuBarItem(_ sender: Any) {
         present(SideMenuManager.menuLeftNavigationController!, animated: true, completion: nil)
@@ -25,36 +27,14 @@ class MapViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        locationManager.delegate = self
-        locationManager.requestWhenInUseAuthorization()
-        locationManager.startUpdatingLocation()
+        let camera = GMSCameraPosition.camera(withLatitude: 1.285, longitude: 103.848, zoom: 12)
+        //let mapView = GMSMapView.map(withFrame: 0 , camera: camera)
+        //self.view = mapView
         
-    }
-    
-
-  
-}
-
-extension MapViewController: CLLocationManagerDelegate {
-    
-    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        
-        if status == .authorizedWhenInUse {
-
-            locationManager.startUpdatingLocation()
-            mapView.isMyLocationEnabled = true
-            mapView.settings.myLocationButton = true
-        }
-    }
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        if let location = locations.first {
-            
-            mapView.camera = GMSCameraPosition(target: location.coordinate, zoom: 15, bearing: 0, viewingAngle: 0)
-            locationManager.stopUpdatingLocation()
-        }
         
     }
 }
+
 
 
 

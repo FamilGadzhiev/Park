@@ -11,7 +11,7 @@ import Alamofire
 import IDZSwiftCommonCrypto
 
 
-class LoginViewController: UIViewController, UITextFieldDelegate{
+class LoginViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var loginEnter: RoundTextField!
     @IBOutlet weak var passwordEnter: RoundTextField!
@@ -34,7 +34,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate{
         if !text.isEmpty{
             signIn.isUserInteractionEnabled = true
         } else {
-            signIn.isUserInteractionEnabled = false
+            signIn.isUserInteractionEnabled = true
         } 
         return true
     }
@@ -42,41 +42,34 @@ class LoginViewController: UIViewController, UITextFieldDelegate{
     
     @IBAction func loginAction(_ sender: AnyObject) {
         
+        let loginInput = self.loginEnter.text!
+        let password = self.passwordEnter.text!
         
-        if let login = loginEnter.text, let pass = passwordEnter.text, (login.characters.count > 0 && pass.characters.count > 0){
+        let md5s2: Digest = Digest(algorithm: .md5)
+        md5s2.update(string: password)
+        let digest = md5s2.final()
+        
+        apiManager.auth(login: loginInput, pass: hexString(fromArray: digest)) { result in
             
-            let loginInput = self.loginEnter.text!
-            let password = self.passwordEnter.text!
-            
-            let md5s2: Digest = Digest(algorithm: .md5)
-            md5s2.update(string: password)
-            let digest = md5s2.final()
-            
-            apiManager.auth(login: loginInput, pass: hexString(fromArray: digest)) { result in
+            switch result {
+            case .success(let userData):
+                userData.writeToUserDefaults()
+                print("Hash is \(userData.hash)")
+                print(userData.sMsgTitle!)
+                print("Is main thread? \(Thread.isMainThread)")
                 
-                switch result {
-                case .success(let userData):
-                
-                    print("Hash is \(userData.hash)")
-                    print(userData.sMsgTitle!)
-                    
                 self.performSegue(withIdentifier: AvionicusSegues.goToTab, sender: self)
-                    
-                case .failure(let error):
-                    
-                    print("ERROR! \(error.localizedDescription)")
+                
+            case .failure(let error):
+                
+                print("ERROR! \(error.localizedDescription)")
+                DispatchQueue.main.async {
                     let errorAlert = UIAlertController(title: "Error", message: " Что то пошло не так, попробуй снова =( ", preferredStyle: UIAlertControllerStyle.alert)
                     let actionError = UIAlertAction(title: "Try Again", style: .cancel, handler: nil)
                     errorAlert.addAction(actionError)
                     self.present(errorAlert, animated: true, completion: nil)
-                    
                 }
             }
-        } else{
-            let alert = UIAlertController(title: "Username and Password required", message: "You must enter both a username and password", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-            present(alert, animated: true, completion: nil)
-
         }
     }
 }

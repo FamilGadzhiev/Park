@@ -22,7 +22,7 @@ enum APIResult<T> {
 enum Avionicus {
     case auth(String, String)
     case registration(String, String, String)
-    case getProfile()
+    case getProfile
     
     var baseURL: String { return "http://avionicus.ru" }
     var avkey: String { return "1M1TE9oeWTDK6gFME9JYWXqpAGc" }
@@ -35,13 +35,14 @@ enum Avionicus {
         static let responseType = "response_type"
         static let hash = "hash"
         static let mail = "mail"
+        static let action = "action"
     }
     
     var path: String {
         switch self {
         case .auth: return "/api/common/login"
         case .registration: return "/api/common/registration/"
-        case .getProfile: return "api/avtrack/user/"
+        case .getProfile: return "/api/avtrack/user/"
         }
     }
     
@@ -67,7 +68,8 @@ enum Avionicus {
             return[
                 ParameterKeys.avkey: avkey,
                 ParameterKeys.hash: hash!,
-                ParameterKeys.responseType: "json"
+                ParameterKeys.responseType: "json",
+                ParameterKeys.action: "get_profile",
             ]
         }
     }
@@ -172,12 +174,12 @@ class APIManager {
     }
     
     
-//    func getProfile(completion: @escaping(APIResult<UserProfile>)-> Void){
-//        let request = Avionicus.getProfile.request
-//        fetch(request: request, parse: {(json) -> UserProfile? in
-//            return UserProfile(json: json)
-//        }, completion: completion)
-//    }
+    func getProfile(completion: @escaping(APIResult<UserProfile>)-> Void){
+        let request = Avionicus.getProfile.request
+        fetch(request: request, parse: {(json) -> UserProfile? in
+            return UserProfile(json: json)
+        }, completion: completion)
+    }
     
 }
 
