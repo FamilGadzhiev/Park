@@ -633,10 +633,10 @@
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nhY-DC-DHZ" customClass="GMSMapView">
-                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="554" id="B3S-T4-umX"/>
+                                    <constraint firstAttribute="height" constant="603" id="B3S-T4-umX"/>
                                     <constraint firstAttribute="width" constant="375" id="mBL-s2-6zm"/>
                                 </constraints>
                             </view>
@@ -647,7 +647,7 @@
                             <constraint firstItem="nhY-DC-DHZ" firstAttribute="top" secondItem="YTc-Dp-ntW" secondAttribute="bottom" id="9ul-lR-k1x"/>
                             <constraint firstAttribute="bottom" secondItem="VSS-0X-T4j" secondAttribute="bottom" id="AeR-SP-NuN"/>
                             <constraint firstItem="nhY-DC-DHZ" firstAttribute="leading" secondItem="hOp-Bl-KQV" secondAttribute="leading" id="FSj-uV-ilq"/>
-                            <constraint firstItem="ux7-xp-UUb" firstAttribute="top" secondItem="nhY-DC-DHZ" secondAttribute="bottom" id="GbY-xV-3ZD"/>
+                            <constraint firstItem="ux7-xp-UUb" firstAttribute="top" secondItem="nhY-DC-DHZ" secondAttribute="bottom" constant="-49" id="GbY-xV-3ZD"/>
                             <constraint firstItem="VSS-0X-T4j" firstAttribute="centerX" secondItem="hOp-Bl-KQV" secondAttribute="centerX" id="HIS-qv-aRY"/>
                             <constraint firstItem="VSS-0X-T4j" firstAttribute="centerY" secondItem="hOp-Bl-KQV" secondAttribute="centerY" constant="-14" id="MjS-X6-QOx"/>
                             <constraint firstAttribute="trailing" secondItem="nhY-DC-DHZ" secondAttribute="trailing" id="OXm-BR-Fnn"/>
@@ -665,8 +665,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="Map" destination="nhY-DC-DHZ" id="jhZ-vh-FRm"/>
-                        <outlet property="MenuButton" destination="7ND-xc-jwJ" id="xKe-eL-7IB"/>
+                        <outlet property="mapView" destination="nhY-DC-DHZ" id="oJu-rY-8Tr"/>
+                        <outlet property="menuButton" destination="7ND-xc-jwJ" id="4Et-hU-eOW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MRi-VD-03F" userLabel="First Responder" sceneMemberID="firstResponder"/>

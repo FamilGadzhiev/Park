@@ -29,7 +29,6 @@ class UserRegistration: Mappable {
                 return nil
             }
         }
-        
     }
     
     func mapping(map: Map) {

@@ -9,10 +9,13 @@
 import Foundation
 import ObjectMapper
 import Alamofire
+import AlamofireObjectMapper
 
-class TrackList{
+class TrackList: Mappable{
     
-   
+    public required init?(map: Map) {}
+    
+    
     var type: String?
     var dt_start: String?
     var dt_end: String?
@@ -27,6 +30,8 @@ class TrackList{
     var var_max: String?
     var var_min: String?
 
-    
+    func mapping(map: Map) {
+        
+    }
     
 }

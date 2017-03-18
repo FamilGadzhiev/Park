@@ -84,6 +84,7 @@ class UserData: Mappable {
     func getHashFromKeychain() -> String? {
         return keyChain.get("hash")
     }
+
     
     func writeToUserDefaults() {
         UserDefaults.standard.set(userId, forKey: "id")

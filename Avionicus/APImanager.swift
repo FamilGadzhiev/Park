@@ -24,10 +24,12 @@ enum Avionicus {
     case auth(String, String)
     case registration(String, String, String)
     case getProfile
+    case getTrack
     
     var baseURL: String { return "http://avionicus.ru" }
     var avkey: String { return "1M1TE9oeWTDK6gFME9JYWXqpAGc" }
     var hash: String? { return keyChain.get("hash") }
+    var userId: String? { return UserDefaults.standard.value(forKey: "id") as? String }
     
     private struct ParameterKeys {
         static let login = "login"
@@ -37,6 +39,8 @@ enum Avionicus {
         static let hash = "hash"
         static let mail = "mail"
         static let action = "action"
+        static let userId = "user_id"
+        
     }
     
     var path: String {
@@ -44,6 +48,7 @@ enum Avionicus {
         case .auth: return "/api/common/login/"
         case .registration: return "/api/common/registration/"
         case .getProfile: return "/api/avtrack/user/"
+        case .getTrack: return "/android/tracks_v0648.php"
         }
     }
     
@@ -71,6 +76,14 @@ enum Avionicus {
                 ParameterKeys.hash: hash!,
                 ParameterKeys.responseType: "json",
                 ParameterKeys.action: "get_profile",
+            ]
+        case .getTrack:
+            return[
+                ParameterKeys.avkey: avkey + "=",
+                ParameterKeys.hash: hash!,
+                ParameterKeys.responseType: "json",
+                ParameterKeys.userId: userId!,
+                
             ]
         }
     }
@@ -180,6 +193,9 @@ class APIManager {
             return UserProfile(json: json)
         }, completion: completion)
     }
+//    func getTrack(<#parameters#>) -> <#return type#> {
+//        <#function body#>
+//    }
     
 }
 

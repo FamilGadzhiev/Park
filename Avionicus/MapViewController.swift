@@ -10,11 +10,11 @@ import UIKit
 import GoogleMaps
 import SideMenu
 
-class MapViewController: UIViewController{
+class MapViewController: UIViewController, CLLocationManagerDelegate{
     
     
-    @IBOutlet weak var Map: GMSMapView!
-    @IBOutlet weak var MenuButton: UIBarButtonItem!
+    @IBOutlet weak var mapView: GMSMapView!
+    @IBOutlet weak var menuButton: UIBarButtonItem!
     
     let locationManager = CLLocationManager()
     
@@ -27,11 +27,21 @@ class MapViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let camera = GMSCameraPosition.camera(withLatitude: 1.285, longitude: 103.848, zoom: 12)
-        //let mapView = GMSMapView.map(withFrame: 0 , camera: camera)
-        //self.view = mapView
+        let camera = GMSCameraPosition.camera(withLatitude: 55.754911, longitude: 37.613674, zoom: 10)
+        mapView.camera = camera
         
         
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        locationManager.delegate = self
+        locationManager.requestWhenInUseAuthorization()
+        mapView.addObserver(self, forKeyPath: "myLocation", options: NSKeyValueObservingOptions.new, context: nil)
+        
+    }
+    func locationManager(manager: CLLocationManager!, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
+        if status == CLAuthorizationStatus.authorizedWhenInUse {
+            mapView.isMyLocationEnabled = true
+        }
     }
 }
 
