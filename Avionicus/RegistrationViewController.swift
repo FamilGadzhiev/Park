@@ -33,8 +33,20 @@ class RegistrationViewController: UIViewController, UITextFieldDelegate {
         let passwordText = self.passwordText?.text
         let mailText = self.mailText?.text
         
+        
         apiManager.registration(login: loginText!, pass: passwordText!, mail: mailText!){ result in
         
+            switch result {
+            case .success (let userRegistration):
+                print("succes \(userRegistration.sMsg) \(userRegistration.sMsgTitle)")
+                print(Avionicus.registration(loginText! ,passwordText!,mailText!).request)
+                
+            case .failure(let error):
+                print("error")
+                print(Avionicus.registration(loginText! ,passwordText!,mailText!).request)
+                
+                
+            }
             
             
         }

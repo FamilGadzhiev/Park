@@ -25,7 +25,12 @@ class SideMenuTableViewController: UITableViewController {
         super.viewDidLoad()
         
 
+        ///вопросы по поводу реалма, нужен ли он?
+        ///как реализовать офлайн подкачку данных в приложение 
+        //как ошибки в коде?
+        
         age.text = (UserDefaults.standard.value(forKey: "id") as! String)
+        name.text = (UserDefaults.standard.value(forKey: "login") as! String)
         
         avatarIm.layer.borderColor = UIColor.white.cgColor
         avatarIm.layer.borderWidth = 0.5
@@ -34,9 +39,34 @@ class SideMenuTableViewController: UITableViewController {
         avatarIm.clipsToBounds = true
         
         
+        
+        let profileRequest = Avionicus.getProfile.request
+        print(profileRequest.url!)
+        apiManager.getProfile() { result in
+            switch result{
+            case .success(let userProfile):
+                
+                print(userProfile.profile_name!)
+                print(userProfile.profile_birthday!)
+                print(userProfile.profile_height!)
+                
+            case .failure(let error):
+                
+                print("error \(error)")
+                
+            }
+            
+        }
+        
     }
 
 
+    func download()  {
+        
+        //apiManager.getProfile(completion: )
+        
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         

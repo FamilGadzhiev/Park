@@ -17,6 +17,7 @@ typealias JSON = [String: Any]
 enum APIResult<T> {
     case success(T)
     case failure(Error)
+    //case error(T)
 }
 
 enum Avionicus {
@@ -40,7 +41,7 @@ enum Avionicus {
     
     var path: String {
         switch self {
-        case .auth: return "/api/common/login"
+        case .auth: return "/api/common/login/"
         case .registration: return "/api/common/registration/"
         case .getProfile: return "/api/avtrack/user/"
         }
@@ -66,7 +67,7 @@ enum Avionicus {
         
         case .getProfile:
             return[
-                ParameterKeys.avkey: avkey,
+                ParameterKeys.avkey: avkey + "=",
                 ParameterKeys.hash: hash!,
                 ParameterKeys.responseType: "json",
                 ParameterKeys.action: "get_profile",
@@ -119,7 +120,6 @@ class APIManager {
     }
     
     
-    
     func fetch<T>(request: URLRequest, parse: @escaping (JSON) -> T?, completion: @escaping (APIResult<T>) -> Void ) {
         
         let task = session.dataTask(with: request) { data, response, error in
@@ -155,7 +155,6 @@ class APIManager {
     }
     
     
-    
     func auth(login: String, pass: String, completion: @escaping (APIResult<UserData>) -> Void) {
         let request = Avionicus.auth(login, pass).request
         
@@ -176,6 +175,7 @@ class APIManager {
     
     func getProfile(completion: @escaping(APIResult<UserProfile>)-> Void){
         let request = Avionicus.getProfile.request
+        
         fetch(request: request, parse: {(json) -> UserProfile? in
             return UserProfile(json: json)
         }, completion: completion)

@@ -21,10 +21,8 @@ class  MainViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
+
         
-   
-        let profileRequest = Avionicus.getProfile.request
-        print(profileRequest.url!)
         
     }
     

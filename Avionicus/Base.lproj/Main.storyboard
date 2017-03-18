@@ -252,7 +252,7 @@
                     </connections>
                 </customObject>
             </objects>
-            <point key="canvasLocation" x="1632.8" y="-1280.5097451274364"/>
+            <point key="canvasLocation" x="1633" y="-1281"/>
         </scene>
         <!--Main-->
         <scene sceneID="6ly-uQ-CaT">
@@ -528,7 +528,10 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <connections>
-                                            <segue destination="Yv2-Mr-hyb" kind="show" id="Ez0-VC-0Wn"/>
+                                            <segue destination="Yv2-Mr-hyb" kind="showDetail" action="showViewController:sender:" id="Ez0-VC-0Wn">
+                                                <segue key="commit" inheritsFrom="parent" id="fMh-Hi-Xzh"/>
+                                                <segue key="preview" inheritsFrom="commit" id="0mT-NY-Fdv"/>
+                                            </segue>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="LWu-uj-yNA">
@@ -581,7 +584,10 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <connections>
-                                            <segue destination="D4G-I5-tfo" kind="showDetail" id="pW1-3E-UPL"/>
+                                            <segue destination="D4G-I5-tfo" kind="showDetail" id="pW1-3E-UPL">
+                                                <segue key="commit" inheritsFrom="parent" id="GXt-kD-S3z"/>
+                                                <segue key="preview" inheritsFrom="commit" id="UwE-kc-EA2"/>
+                                            </segue>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -596,11 +602,11 @@
                     <nil key="simulatedStatusBarMetrics"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
-                        <outlet property="age" destination="ewl-jm-uF7" id="XEE-Kk-Mxw"/>
+                        <outlet property="age" destination="aCa-7c-2i4" id="1J1-Em-vuy"/>
                         <outlet property="avatarIm" destination="rr2-sP-Vm9" id="g5O-mG-Oa3"/>
                         <outlet property="name" destination="kqw-wi-ng3" id="aiO-IQ-Y85"/>
-                        <outlet property="size" destination="6og-gY-BvH" id="j06-oY-gAs"/>
-                        <outlet property="weight" destination="FQ7-ht-a7k" id="kZp-x7-o66"/>
+                        <outlet property="size" destination="uIN-a1-8v5" id="jVO-rf-Mhn"/>
+                        <outlet property="weight" destination="ZtH-x0-eYj" id="jks-qR-Tmo"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i62-28-seC" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -726,29 +732,6 @@
                                     <constraint firstAttribute="height" constant="667" id="aZk-Wc-PWP"/>
                                 </constraints>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="sename" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ciR-4s-PsG" customClass="RoundTextField" customModule="Avionicus" customModuleProvider="target">
-                                <rect key="frame" x="190" y="229" width="142" height="40"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="20"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidht">
-                                        <real key="value" value="2"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" red="0.94117647058823528" green="0.98431372549019602" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
-                                        <color key="value" red="0.92156862750000001" green="0.96862745100000003" blue="0.99215686270000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <outlet property="nextResponderField" destination="c2V-Ql-X4V" id="IFH-O5-kqW"/>
-                                </connections>
-                            </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JGx-AW-c4T" customClass="RoundTextField" customModule="Avionicus" customModuleProvider="target">
                                 <rect key="frame" x="42" y="419" width="290" height="40"/>
                                 <constraints>
@@ -889,33 +872,6 @@
                                     <outlet property="nextResponderField" destination="zbq-nm-cYJ" id="oRf-nA-RBQ"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="772-O6-vPX" customClass="RoundTextField" customModule="Avionicus" customModuleProvider="target">
-                                <rect key="frame" x="42" y="229" width="144" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="144" id="t6x-dc-Ekz"/>
-                                    <constraint firstAttribute="height" constant="40" id="vQW-hh-fqE"/>
-                                </constraints>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="20"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidht">
-                                        <real key="value" value="2"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" red="0.94117647058823528" green="0.98431372549019602" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
-                                        <color key="value" red="0.92156862750000001" green="0.96862745100000003" blue="0.99215686270000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <outlet property="nextResponderField" destination="ciR-4s-PsG" id="rAx-4g-CwI"/>
-                                </connections>
-                            </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Park" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gc4-AS-Maj">
                                 <rect key="frame" x="98" y="74" width="201" height="61"/>
                                 <constraints>
@@ -942,10 +898,7 @@
                             <constraint firstItem="AsN-Jv-T6U" firstAttribute="top" secondItem="Gc4-AS-Maj" secondAttribute="bottom" constant="19" id="DdK-hX-Okq"/>
                             <constraint firstItem="EPO-DU-Le7" firstAttribute="top" secondItem="JGx-AW-c4T" secondAttribute="bottom" constant="24" id="FDd-cJ-Xdy"/>
                             <constraint firstItem="yEe-vJ-CbC" firstAttribute="top" secondItem="9bj-gQ-vNt" secondAttribute="bottom" id="FOO-p2-2Oj"/>
-                            <constraint firstItem="ciR-4s-PsG" firstAttribute="baseline" secondItem="772-O6-vPX" secondAttribute="baseline" id="HBj-z7-ymp"/>
-                            <constraint firstItem="772-O6-vPX" firstAttribute="leading" secondItem="c2V-Ql-X4V" secondAttribute="leading" id="HVt-5x-TY0"/>
                             <constraint firstItem="8jq-Cg-B8R" firstAttribute="top" secondItem="Gc4-AS-Maj" secondAttribute="top" constant="-0.5" id="J9O-tR-MOM"/>
-                            <constraint firstItem="ciR-4s-PsG" firstAttribute="leading" secondItem="772-O6-vPX" secondAttribute="trailing" constant="4" id="K5G-Cd-aG2"/>
                             <constraint firstItem="c2V-Ql-X4V" firstAttribute="centerX" secondItem="4qc-Cr-PnB" secondAttribute="centerX" id="Md3-G7-dgK"/>
                             <constraint firstItem="9bj-gQ-vNt" firstAttribute="centerX" secondItem="4qc-Cr-PnB" secondAttribute="centerX" id="N7t-QY-lmh"/>
                             <constraint firstAttribute="trailingMargin" secondItem="c2V-Ql-X4V" secondAttribute="trailing" constant="27" id="PHJ-II-srN"/>
@@ -953,19 +906,15 @@
                             <constraint firstItem="zbq-nm-cYJ" firstAttribute="top" secondItem="c2V-Ql-X4V" secondAttribute="bottom" constant="22" id="UoA-tt-6dR"/>
                             <constraint firstItem="yEe-vJ-CbC" firstAttribute="top" secondItem="Bx1-4S-7uG" secondAttribute="bottom" constant="58" id="Vey-al-e5F"/>
                             <constraint firstItem="JGx-AW-c4T" firstAttribute="leading" secondItem="c2V-Ql-X4V" secondAttribute="leading" id="Woj-gP-IaB"/>
-                            <constraint firstItem="ciR-4s-PsG" firstAttribute="bottom" secondItem="772-O6-vPX" secondAttribute="bottom" id="XC1-BJ-CYF"/>
                             <constraint firstItem="c2V-Ql-X4V" firstAttribute="leading" secondItem="4qc-Cr-PnB" secondAttribute="leadingMargin" constant="26" id="XMd-6g-hrW"/>
                             <constraint firstItem="9bj-gQ-vNt" firstAttribute="leading" secondItem="4qc-Cr-PnB" secondAttribute="leading" id="XWM-6u-fiL"/>
-                            <constraint firstItem="c2V-Ql-X4V" firstAttribute="top" secondItem="ciR-4s-PsG" secondAttribute="bottom" constant="26" id="Xh6-3N-Wlr"/>
                             <constraint firstItem="9bj-gQ-vNt" firstAttribute="top" secondItem="4qc-Cr-PnB" secondAttribute="top" id="aln-9S-tHC"/>
                             <constraint firstItem="JGx-AW-c4T" firstAttribute="leading" secondItem="4qc-Cr-PnB" secondAttribute="leadingMargin" constant="26" id="cAW-tc-HYr"/>
                             <constraint firstItem="9bj-gQ-vNt" firstAttribute="centerY" secondItem="4qc-Cr-PnB" secondAttribute="centerY" id="ctp-1R-gt1"/>
                             <constraint firstAttribute="trailingMargin" secondItem="zbq-nm-cYJ" secondAttribute="trailing" constant="27" id="ea2-IK-G2E"/>
                             <constraint firstItem="Bx1-4S-7uG" firstAttribute="leading" secondItem="9bj-gQ-vNt" secondAttribute="leading" id="fFF-JE-dro"/>
-                            <constraint firstItem="ciR-4s-PsG" firstAttribute="top" secondItem="AsN-Jv-T6U" secondAttribute="bottom" constant="52" id="hsU-jR-BIT"/>
                             <constraint firstItem="JGx-AW-c4T" firstAttribute="top" secondItem="zbq-nm-cYJ" secondAttribute="bottom" constant="22" id="jRm-Wr-gpn"/>
                             <constraint firstItem="Gc4-AS-Maj" firstAttribute="leading" secondItem="8jq-Cg-B8R" secondAttribute="trailing" constant="8" id="kC3-Es-ED6"/>
-                            <constraint firstItem="ciR-4s-PsG" firstAttribute="trailing" secondItem="c2V-Ql-X4V" secondAttribute="trailing" id="kD0-6R-m67"/>
                             <constraint firstItem="JGx-AW-c4T" firstAttribute="trailing" secondItem="c2V-Ql-X4V" secondAttribute="trailing" id="kmo-mx-ixU"/>
                             <constraint firstItem="zbq-nm-cYJ" firstAttribute="top" secondItem="c2V-Ql-X4V" secondAttribute="bottom" constant="22" id="lBR-sf-UaC"/>
                             <constraint firstItem="yEe-vJ-CbC" firstAttribute="top" secondItem="AsN-Jv-T6U" secondAttribute="bottom" constant="490" id="mf5-4C-sX2"/>
@@ -981,10 +930,8 @@
                     <connections>
                         <outlet property="loginText" destination="c2V-Ql-X4V" id="Qrg-Dd-STw"/>
                         <outlet property="mailText" destination="zbq-nm-cYJ" id="yfa-58-dv0"/>
-                        <outlet property="nameText" destination="772-O6-vPX" id="mOg-EZ-SZx"/>
                         <outlet property="passwordText" destination="JGx-AW-c4T" id="vwr-jq-fYD"/>
                         <outlet property="registrationBtn" destination="EPO-DU-Le7" id="NRR-of-dIv"/>
-                        <outlet property="senameText" destination="ciR-4s-PsG" id="Mpg-n4-nwd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p4J-p6-uph" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1068,7 +1015,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0ik-Zb-d6U" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6266" y="-505"/>
+            <point key="canvasLocation" x="7204" y="-505"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="dBs-ZW-jGg">
@@ -1248,8 +1195,10 @@
         <image name="slide002" width="1256" height="836"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="GAG-xS-8zd"/>
         <segue reference="rfk-zI-Am9"/>
+        <segue reference="pW1-3E-UPL"/>
+        <segue reference="GAG-xS-8zd"/>
+        <segue reference="Ez0-VC-0Wn"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.28198510408401489" green="0.28954288363456726" blue="0.3268829882144928" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

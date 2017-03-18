@@ -58,33 +58,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-    func addBlurEffect(toView view:UIView?) {
-        // Add blur view
-        guard let view = view else { return }
-        
-        
-        //This will let visualEffectView to work perfectly
-        if let navBar = view as? UINavigationBar{
-            navBar.setBackgroundImage(UIImage(), for: .default)
-            navBar.shadowImage = UIImage()
-        }
-        
-        
-        var bounds = view.bounds
-        // bounds.offsetInPlace(dx: 0.0, dy: -20.0)
-        bounds.offsetBy(dx: 0.0, dy: -20.0)
-        bounds.size.height = bounds.height + 20.0
-        
-        
-        let blurEffect = UIBlurEffect(style: .dark)
-        let visualEffectView = UIVisualEffectView(effect: blurEffect)
-        
-        visualEffectView.isUserInteractionEnabled = false
-        visualEffectView.frame = bounds
-        visualEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        view.insertSubview(visualEffectView, at: 0)
-        
-    }
-
 }
 

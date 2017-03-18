@@ -51,9 +51,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 userData.writeToUserDefaults()
                 print("Hash is \(userData.hash)")
                 print(userData.sMsgTitle!)
-                print("Is main thread? \(Thread.isMainThread)")
                 
-                self.performSegue(withIdentifier: AvionicusSegues.goToTab, sender: self)
+                DispatchQueue.main.async {
+                    self.performSegue(withIdentifier: AvionicusSegues.goToTab, sender: self)
+                }
                 
             case .failure(let error):
                 
@@ -81,8 +82,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     func kbWillShow(_ notifitacion: Notification) {
         let userInfo = notifitacion.userInfo
         let kbFrame = (userInfo?[UIKeyboardFrameEndUserInfoKey] as! NSValue ).cgRectValue
-        scrollView.contentOffset = CGPoint(x: 0, y: 100)
-        
+        scrollView.contentOffset = CGPoint(x: 0, y: (kbFrame.height) - 30.0)
         
     }
     func kbWillHide() {

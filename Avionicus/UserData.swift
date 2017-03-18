@@ -87,6 +87,7 @@ class UserData: Mappable {
     
     func writeToUserDefaults() {
         UserDefaults.standard.set(userId, forKey: "id")
+        UserDefaults.standard.set(login, forKey: "login")
         
     }
 
