@@ -13,6 +13,7 @@ import KeychainSwift
 
 let keyChain = KeychainSwift()
 typealias JSON = [String: Any]
+typealias parametr = [String: Any]
 
 enum APIResult<T> {
     case success(T)
@@ -24,14 +25,18 @@ enum Avionicus {
     case auth(String, String)
     case registration(String, String, String)
     case getProfile
+    case setProfile(parametr)
     case getTrack
+    
     
     var baseURL: String { return "http://avionicus.ru" }
     var avkey: String { return "1M1TE9oeWTDK6gFME9JYWXqpAGc" }
     var hash: String? { return keyChain.get("hash") }
     var userId: String? { return UserDefaults.standard.value(forKey: "id") as? String }
     
+    
     private struct ParameterKeys {
+        
         static let login = "login"
         static let pass = "password"
         static let avkey = "avkey"
@@ -41,6 +46,7 @@ enum Avionicus {
         static let action = "action"
         static let userId = "user_id"
         
+        
     }
     
     var path: String {
@@ -48,6 +54,7 @@ enum Avionicus {
         case .auth: return "/api/common/login/"
         case .registration: return "/api/common/registration/"
         case .getProfile: return "/api/avtrack/user/"
+        case .setProfile: return "/api/avtrack/user/"
         case .getTrack: return "/android/tracks_v0648.php"
         }
     }
@@ -76,6 +83,13 @@ enum Avionicus {
                 ParameterKeys.hash: hash!,
                 ParameterKeys.responseType: "json",
                 ParameterKeys.action: "get_profile",
+            ]
+        case .setProfile:
+            return[
+                ParameterKeys.avkey: avkey + "=",
+                ParameterKeys.hash: hash!,
+                ParameterKeys.responseType: "json",
+                ParameterKeys.action: "set_profile",
             ]
         case .getTrack:
             return[
