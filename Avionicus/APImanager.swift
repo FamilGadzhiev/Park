@@ -18,7 +18,6 @@ typealias parametr = [String: Any]
 enum APIResult<T> {
     case success(T)
     case failure(Error)
-    //case error(T)
 }
 
 enum Avionicus {
