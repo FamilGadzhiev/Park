@@ -31,7 +31,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func topText(_ sender: Any) {
-        print("Touch")
+        print("Touch ")
     }
     
 
